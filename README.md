@@ -1,9 +1,13 @@
 
-<div>
-<p align="center"> 
-  <img alt="screenshot" src="tftcover.jpg" width="1200" height="400">
-</p>
 
+<img 
+    style="display: block; 
+           margin-left: auto;
+           margin-right: auto;
+           width: 30%;"
+    src="![img.png](img.png).jpg" 
+    alt="Banner">
+</img>
 #                                                TFT Assistant 
 
 ## Descrição
@@ -72,6 +76,8 @@ cd tft-assistant
 Crie um arquivo config.properties na raiz do projeto
 
 RIOT_API_KEY=sua_chave_api_aqui
+
+https://developer.riotgames.com
 
 ## Compile e Execute
 
