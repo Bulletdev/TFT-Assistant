@@ -5,7 +5,7 @@
            margin-left: auto;
            margin-right: auto;
            width: 30%;"
-    src="![/img.png](/img.png).jpg" 
+    src="![/img.png](/img.png)" 
     alt="Banner">
 </img>
 #                                                TFT Assistant 
