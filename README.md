@@ -8,8 +8,9 @@
 
 ## Descrição
 
-Uma ferramenta de assistência para Teamfight Tactics (TFT) desenvolvida em Java, com funcionalidades avançadas para melhorar sua performance no jogo.
-Funcionalidades Principais
+- Uma ferramenta de assistência para Teamfight Tactics (TFT) desenvolvida em Java, com funcionalidades avançadas para melhorar sua performance no jogo.
+
+- Funcionalidades Principais
 
 > Recomendação de Composições
  
@@ -32,7 +33,7 @@ Chave de API da Riot Games
 
 ## Configuração
 
-1. Instalação de Dependências
+### 1. Instalação de Dependências
 
 # Instalar Tesseract OCR
 
@@ -56,7 +57,7 @@ https://github.com/UB-Mannheim/tesseract/wiki
 
 2. Configuração do Projeto
 
-Clone o repositório
+> Clone o repositório
 
 ````
 git clone https://github.com/bulletdev/tft-assistant.git
@@ -69,7 +70,7 @@ cd tft-assistant
 ## Configure a Chave da API da Riot
 
 
-Crie um arquivo config.properties na raiz do projeto
+> Crie um arquivo config.properties na raiz do projeto
 
 RIOT_API_KEY=sua_chave_api_aqui
 
@@ -88,23 +89,23 @@ mvn javafx:run
 ````
 ## Uso
 
-Abra o TFT
+> Abra o TFT
 
-Inicie o TFT Assistant
+> Inicie o TFT Assistant
 
-A ferramenta irá capturar e analisar automaticamente o estado do jogo
+> A ferramenta irá capturar e analisar automaticamente o estado do jogo
 
 ## Contribuição
 
 Faça um fork do projeto
 
-Crie uma branch para sua feature (git checkout -b feature/nova-feature)
-Commit suas mudanças (git commit -m 'Adiciona nova feature')
-Push para a branch (git push origin feature/nova-feature)
-Abra um Pull Request
+- Crie uma branch para sua feature (git checkout -b feature/nova-feature)
+- Commit suas mudanças (git commit -m 'Adiciona nova feature')
+- Push para a branch (git push origin feature/nova-feature)
+- Abra um Pull Request
 
 # Limitações e Avisos
 
-Requer permissão de captura de tela
-Precisão depende da qualidade da captura
-Respeite os Termos de Serviço da Riot Games
+- Requer permissão de captura de tela
+- Precisão depende da qualidade da captura
+- Respeite os Termos de Serviço da Riot Games
