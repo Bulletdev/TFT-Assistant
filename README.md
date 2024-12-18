@@ -1,13 +1,9 @@
 
+<div>
+<p align="center"> 
+  <img alt="screenshot" src="img.png" width="1920" height="400">
+</p>
 
-<img 
-    style="display: block; 
-           margin-left: auto;
-           margin-right: auto;
-           width: 30%;"
-    src="![/img.png](/img.png)" 
-    alt="Banner">
-</img>
 #                                                TFT Assistant 
 
 ## Descrição
