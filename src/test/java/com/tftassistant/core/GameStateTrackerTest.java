@@ -53,14 +53,11 @@ class GameStateTrackerTest {
 
     @Test
     void processGameState_ShouldIdentifyChampionsCorrectly() {
-        // Arrange
-        String extractedText = "Vayne\nGaren\nDarius";
-        List<String> expectedChampions = Arrays.asList("Vayne", "Garen", "Darius");
+        String extractedText = "Draven\nSwain\nDariud";
+        List<String> expectedChampions = Arrays.asList("Draven", "Swain", "Darius");
 
-        // Act
         GameState gameState = gameStateTracker.processGameState(extractedText);
 
-        // Assert
         List<Champion> actualChampions = gameState.getPlayerChampions();
         assertEquals(expectedChampions.size(), actualChampions.size());
         assertTrue(actualChampions.stream()
@@ -70,14 +67,11 @@ class GameStateTrackerTest {
 
     @Test
     void processGameState_ShouldIdentifyItemsCorrectly() {
-        // Arrange
         String extractedText = "B.F. Sword\nChain Vest\nGiant's Belt";
         List<String> expectedItems = Arrays.asList("B.F. Sword", "Chain Vest", "Giant's Belt");
 
-        // Act
         GameState gameState = gameStateTracker.processGameState(extractedText);
 
-        // Assert
         List<Item> actualItems = gameState.getPlayerItems();
         assertEquals(expectedItems.size(), actualItems.size());
         assertTrue(actualItems.stream()

@@ -10,7 +10,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="tft-assistant" target="17" />
       <module name="TFT-assistant" target="1.5" />
     </bytecodeTargetLevel>
   </component>

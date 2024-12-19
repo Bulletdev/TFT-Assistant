@@ -1,3 +1,10 @@
+import java.awt.image.BufferedImage;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.ArrayList;
+
 class GameStateTracker {
     private ScreenCaptureModule screenCaptureModule;
     private CompositionAnalyzer compositionAnalyzer;
@@ -38,7 +45,6 @@ class GameStateTracker {
 
     private List<Champion> detectChampionsFromText(String text) {
         List<Champion> detected = new ArrayList<>();
-        // Usar uma lista de nomes de campeões conhecidos e procurar no texto
         for (String championName : getKnownChampionNames()) {
             if (text.contains(championName)) {
                 Champion champion = new Champion(championName);
@@ -50,6 +56,6 @@ class GameStateTracker {
 
     private List<String> getKnownChampionNames() {
         // Retornar lista de nomes de campeões do set atual
-        return Arrays.asList("Ahri", "Riven", "Yasuo", "Karma", /* etc */);
+        return Arrays.asList("Lux", "Swain", "Draven", "Jayce");
     }
 }
