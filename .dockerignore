@@ -1,0 +1,32 @@
+gnorar arquivos de sistema e desenvolvimento
+.git
+.gitignore
+.dockerignore
+Dockerfile
+docker-compose.yml
+Diretórios de build e dependências
+target/
+node_modules/
+bin/
+build/
+Arquivos de IDE
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+Logs
+logs/
+*.log
+Arquivos de configuração local
+config.properties
+*.env
+Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+Diretórios de cache
+.cache/
+.npm/
+.mvn/
+Arquivos de teste
+src/test/

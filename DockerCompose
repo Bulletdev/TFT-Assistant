@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  tft-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tft-assistant:latest
+    container_name: tft-assistant
+    environment:
+      - RIOT_API_KEY=${RIOT_API_KEY}
+    volumes:
+      # Montagem de volumes para persistência e configuração
+      - ./config.properties:/app/config.properties
+      - ./data:/app/data
+      - ./logs:/app/logs
+
+    # Configurações para interface gráfica (se necessário)
+    # Requer X11 forwarding no host
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
+
+  # Serviço opcional de monitoramento
+  monitoring:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    depends_on:
+      - tft-assistant
+
+volumes:
+  grafana-storage:
+
+# Configurações de rede
+networks:
+  default:
+    driver: bridge

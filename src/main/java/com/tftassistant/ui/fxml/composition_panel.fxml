@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tftassistant.ui.CompositionPanelController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Label text="Current Composition" styleClass="panel-title"/>
+
+    <GridPane fx:id="championGrid" hgap="5" vgap="5">
+        <!-- Champions will be added here dynamically -->
+    </GridPane>
+
+    <Label text="Recommended Champions" styleClass="section-title"/>
+
+    <FlowPane fx:id="recommendedChampions" hgap="5" vgap="5">
+        <!-- Recommended champions will be added here -->
+    </FlowPane>
+
+    <Label text="Active Synergies" styleClass="section-title"/>
+
+    <VBox fx:id="synergiesContainer" spacing="5">
+        <!-- Synergy indicators will be added here -->
+    </VBox>
+
+    <Label text="Items Recommendation" styleClass="section-title"/>
+
+    <GridPane fx:id="itemsGrid" hgap="5" vgap="5">
+        <!-- Item recommendations will be added here -->
+    </GridPane>
+</VBox>

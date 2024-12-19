@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tftassistant.ui.MainViewController"
+            stylesheets="/css/styles.css">
+
+    <top>
+        <MenuBar>
+            <Menu text="Arquivo">
+                <MenuItem text="Configurações" onAction="#showSettings"/>
+                <MenuItem text="Sair" onAction="#exitApplication"/>
+            </Menu>
+            <Menu text="Ferramentas">
+                <MenuItem text="Capturar Tela" onAction="#captureScreen"/>
+                <MenuItem text="Análise de Composição" onAction="#analyzeComposition"/>
+            </Menu>
+            <Menu text="Ajuda">
+                <MenuItem text="Sobre" onAction="#showAbout"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TabPane>
+            <Tab text="Estado do Jogo" closable="false">
+                <fx:include source="game_state_panel.fxml"/>
+            </Tab>
+            <Tab text="Composição" closable="false">
+                <fx:include source="composition_panel.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" padding="10">
+            <Label fx:id="statusLabel" text="Pronto"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

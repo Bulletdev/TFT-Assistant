@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tftassistant.ui.GameStatePanelController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Label text="Stage:" styleClass="info-label"/>
+        <Label fx:id="stageLabel" styleClass="info-value"/>
+
+        <Label text="Health:" styleClass="info-label"/>
+        <Label fx:id="healthLabel" styleClass="info-value"/>
+
+        <Label text="Gold:" styleClass="info-label"/>
+        <Label fx:id="goldLabel" styleClass="info-value"/>
+    </HBox>
+
+    <TitledPane text="Current Board" expanded="true">
+        <GridPane fx:id="boardGrid" alignment="CENTER" hgap="5" vgap="5">
+            <!-- Board grid will be populated dynamically -->
+        </GridPane>
+    </TitledPane>
+
+    <TitledPane text="Bench" expanded="true">
+        <HBox fx:id="benchContainer" spacing="5">
+            <!-- Bench slots will be added here -->
+        </HBox>
+    </TitledPane>
+
+    <TitledPane text="Shop" expanded="true">
+        <HBox fx:id="shopContainer" spacing="5">
+            <!-- Shop slots will be added here -->
+        </HBox>
+    </TitledPane>
+
+    <Button text="Refresh Game State" onAction="#refreshGameState"
+            styleClass="refresh-button"/>
+</VBox>
