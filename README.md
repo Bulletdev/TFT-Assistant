@@ -26,10 +26,13 @@
 
 ## Pré-requisitos
 
-Java 17+
-Maven
-Tesseract OCR
-Chave de API da Riot Games
+> Java 17+
+
+> Maven
+
+> Tesseract OCR
+
+> Chave de API da Riot Games
 
 ## Configuração
 
