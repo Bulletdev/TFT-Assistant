@@ -36,6 +36,7 @@ class RiotApiConnectorTest {
     }
 
     @Test
+    <SummonerInfo>
     void getSummonerInfo_Success() throws IOException {
         // Arrange
         String mockResponse = """

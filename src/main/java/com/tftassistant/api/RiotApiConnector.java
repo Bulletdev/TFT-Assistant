@@ -1,3 +1,17 @@
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 class RiotApiConnector {
     private static final String API_BASE_URL = "https://na1.api.riotgames.com/tft/";
     private String apiKey;
@@ -27,7 +41,7 @@ class RiotApiConnector {
         }
     }
 
-    public List<MatchInfo> getRecentMatches(String summonerId) throws IOException {
+    public <MatchInfo> List<MatchInfo> getRecentMatches(String summonerId) throws IOException {
         String url = API_BASE_URL + "match/v1/matches/by-puuid/" + summonerId + "/ids";
 
         Request request = new Request.Builder()
@@ -45,16 +59,21 @@ class RiotApiConnector {
                     new TypeReference<List<String>>() {}
             );
 
-            return matchIds.stream()
-                    .limit(10)
-                    .map(this::getMatchDetails)
-                    .filter(Optional::isPresent)
-                    .map(Optional::get)
-                    .collect(Collectors.toList());
+            List<Object> list = new ArrayList<>();
+            long limit = 10;
+            for (String matchId : matchIds) {
+                if (limit-- == 0) break;
+                Optional<Object> matchDetails = getMatchDetails(matchId);
+                if (matchDetails.isPresent()) {
+                    Object o = matchDetails.get();
+                    list.add(o);
+                }
+            }
+            return (List<MatchInfo>) list;
         }
     }
 
-    private Optional<MatchInfo> getMatchDetails(String matchId) {
+    private <MatchInfo> Optional<MatchInfo> getMatchDetails(String matchId) {
         String url = API_BASE_URL + "match/v1/matches/" + matchId;
 
         Request request = new Request.Builder()
