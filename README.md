@@ -28,7 +28,7 @@
 
 - Uma ferramenta de assistência para Teamfight Tactics (TFT) desenvolvida em Java, com funcionalidades avançadas para melhorar sua performance no jogo.
 
-- Funcionalidades Principais
+### Funcionalidades Principais
 
 > Recomendação de Composições
  
