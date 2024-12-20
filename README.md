@@ -1,3 +1,5 @@
+
+[![CodeQL Advanced](https://github.com/Bulletdev/TFT-Assistant/actions/workflows/codeql.yml/badge.svg)](https://github.com/Bulletdev/TFT-Assistant/actions/workflows/codeql.yml)
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Bulletdev/TFT-Assistant?color=04D361&labelColor=000000">
   
@@ -10,6 +12,8 @@
   <a href="https://github.com/Bulletdev/TFT-Assistant/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bulletdev/TFT-Assistant?color=04D361&labelColor=000000">
   </a>
+
+  
 </p>
 
 
