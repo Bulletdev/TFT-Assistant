@@ -1,6 +1,7 @@
 
 [![CodeQL Advanced](https://github.com/Bulletdev/TFT-Assistant/actions/workflows/codeql.yml/badge.svg)](https://github.com/Bulletdev/TFT-Assistant/actions/workflows/codeql.yml)
 <p align="center">
+  
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Bulletdev/TFT-Assistant?color=04D361&labelColor=000000">
   
   <a href="https://www.linkedin.com/in/Michael-Bullet/">
@@ -16,13 +17,19 @@
   
 </p>
 
+  
 
 <div>
 <p align="center"> 
   <img alt="screenshot" src="img.png" width="1920" height="400">
 </p>
 
-#                                                TFT Assistant 
+<div align="center"> <h1>TFT ASSISTANT</h1> </div>
+
+<div>
+<p align="center"> 
+  <img a src="/public/tftlogo.png" width="60" height="60">
+</p>
 
 ## Descrição
 
