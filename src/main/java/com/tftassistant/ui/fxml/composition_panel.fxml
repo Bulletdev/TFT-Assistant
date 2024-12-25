@@ -4,7 +4,7 @@
 <?import javafx.geometry.Insets?>
 
 <VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.tftassistant.ui.CompositionPanelController">
+      fx:controller="com.tftassistant.ui.compositionPanelController">
 
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>

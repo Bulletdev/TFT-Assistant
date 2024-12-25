@@ -11,12 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class TFTAssistantApp extends Application {
     private static final Logger logger = LoggerFactory.getLogger(TFTAssistantApp.class);
-    private ScreenCaptureModule screenCaptureModule;
-    private CompositionAnalyzer compositionAnalyzer;
-    private RiotApiConnector apiConnector;
     private UIManager uiManager;
-    private GameStateTracker gameStateTracker;
-    private PositioningAssistant positioningAssistant;
 
     @Override
     public void start(Stage primaryStage) {
@@ -34,11 +29,11 @@ public class TFTAssistantApp extends Application {
     }
 
     private void initializeModules() {
-        screenCaptureModule = new ScreenCaptureModule();
-        apiConnector = new RiotApiConnector(ConfigLoader.getApiKey());
-        compositionAnalyzer = new CompositionAnalyzer(apiConnector);
-        gameStateTracker = new GameStateTracker(screenCaptureModule, compositionAnalyzer);
-        positioningAssistant = new PositioningAssistant();
+        ScreenCaptureModule screenCaptureModule = new ScreenCaptureModule();
+        RiotApiConnector apiConnector = new RiotApiConnector(ConfigLoader.getApiKey());
+        CompositionAnalyzer compositionAnalyzer = new CompositionAnalyzer(apiConnector);
+        GameStateTracker gameStateTracker = new GameStateTracker(screenCaptureModule, compositionAnalyzer);
+        PositioningAssistant positioningAssistant = new PositioningAssistant();
         uiManager = new UIManager(compositionAnalyzer, gameStateTracker, positioningAssistant);
     }
 
