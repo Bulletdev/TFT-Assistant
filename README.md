@@ -28,10 +28,10 @@
 
 <div>
 <p align="center"> 
-  <img a src="/public/tftlogo.png" width="60" height="60">
+  <img a src="/public/tftlogo.png" width="150" height="150">
 </p>
 
-## Descrição
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Descrição
 
 - Uma ferramenta de assistência para Teamfight Tactics (TFT) desenvolvida em Java, com funcionalidades avançadas para melhorar sua performance no jogo.
 
@@ -49,7 +49,7 @@
 
 > Histórico de Partidas
 
-## Pré-requisitos
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Pré-requisitos
 
 > Java 17+
 
@@ -59,7 +59,7 @@
 
 > Chave de API da Riot Games
 
-## Configuração
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Configuração
 
 ### 1. Instalação de Dependências
 
@@ -95,7 +95,7 @@ git clone https://github.com/bulletdev/tft-assistant.git
 cd tft-assistant
 ````
 
-## Configure a Chave da API da Riot
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Configure a Chave da API da Riot
 
 
 > Crie um arquivo config.properties na raiz do projeto
@@ -115,7 +115,7 @@ mvn clean package
 ````
 mvn javafx:run
 ````
-## Uso
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Uso
 
 > Abra o TFT
 
@@ -123,7 +123,7 @@ mvn javafx:run
 
 > A ferramenta irá capturar e analisar automaticamente o estado do jogo
 
-## Contribuição
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Contribuição
 
 Faça um fork do projeto
 
@@ -132,7 +132,7 @@ Faça um fork do projeto
 - Push para a branch (git push origin feature/nova-feature)
 - Abra um Pull Request
 
-# Limitações e Avisos
+## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20">  Limitações e Avisos
 
 - Requer permissão de captura de tela
 - Precisão depende da qualidade da captura
