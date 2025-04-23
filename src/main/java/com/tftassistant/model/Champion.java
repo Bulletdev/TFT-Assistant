@@ -1,44 +1,52 @@
 package com.tftassistant.model;
 
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Objects; // Importar para equals/hashCode
+import java.util.Set;
 
+/**
+ * Representa um campeão dentro do contexto da aplicação.
+ * Após a refatoração para usar dados dinâmicos, esta classe armazena principalmente
+ * o nome do campeão, que é usado como chave para buscar dados detalhados
+ * no CompositionAnalyzer.
+ */
 public class Champion {
     private String name;
-    private List<String> synergies;
-    private int tier;
-    private int cost;
-    private String imageUrl;
-    private List<Item> items;
+    // Campos como tier, synergies, primaryRole foram removidos pois agora
+    // são buscados dinamicamente no CompositionAnalyzer usando o nome.
+    // Outros campos (vida, itens, posição) podem ser adicionados aqui se necessário
+    // para representar o estado do campeão no jogo ou na UI.
 
+    // Construtor
     public Champion(String name) {
-        this.name = name;
-        this.synergies = new ArrayList<>();
-        this.items = new ArrayList<>();
+        this.name = Objects.requireNonNull(name, "Nome do campeão não pode ser nulo");
     }
 
-    // Getters e Setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    // Getter
+    public String getName() {
+        return name;
+    }
 
-    public List<String> getSynergies() { return synergies; }
-    public void setSynergies(List<String> synergies) { this.synergies = synergies; }
+    // toString simplificado
+    @Override
+    public String toString() {
+        return "Champion{" +
+               "name='" + name + '\'' +
+               '}';
+    }
 
-    public int getTier() { return tier; }
-    public void setTier(int tier) { this.tier = tier; }
+    // TODO: Implementar equals() e hashCode() corretamente baseado no nome,
+    //       se for usar Champions em Sets ou como chaves de Map.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Champion champion = (Champion) o;
+        return Objects.equals(name, champion.name);
+    }
 
-    public int getCost() { return cost; }
-    public void setCost(int cost) { this.cost = cost; }
-
-    public String getImageUrl() { return imageUrl; }
-    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
-
-    public List<Item> getItems() { return items; }
-    public void setItems(List<Item> items) { this.items = items; }
-
-    public void addItem(Item item) {
-        if (items.size() < 3) {
-            items.add(item);
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

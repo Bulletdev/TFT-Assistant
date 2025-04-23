@@ -5,32 +5,42 @@ import java.util.List;
 public class Item {
     private String name;
     private String description;
-    private List<String> effects;
-    private List<Item> components;
+    private List<String> components; // Lista de itens básicos que o compõem
     private String imageUrl;
-    private boolean isComponent;
+    // Adicionar outros atributos, como stats fornecidos, efeitos especiais, etc.
 
-    public Item(String name, String description) {
+    // Construtor
+    public Item(String name) {
         this.name = name;
-        this.description = description;
+        // TODO: Inicializar description, components, imageUrl (talvez buscando de uma fonte de dados)
+        this.description = "Descrição do item..."; // Placeholder
+        this.components = List.of(); // Placeholder
+        this.imageUrl = "path/to/image.png"; // Placeholder
     }
 
-    // Getters e Setters
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    // Getters (e Setters, se necessário)
+    public String getName() {
+        return name;
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public List<String> getEffects() { return effects; }
-    public void setEffects(List<String> effects) { this.effects = effects; }
+    public List<String> getComponents() {
+        return components;
+    }
 
-    public List<Item> getComponents() { return components; }
-    public void setComponents(List<Item> components) { this.components = components; }
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-    public String getImageUrl() { return imageUrl; }
-    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    @Override
+    public String toString() {
+        return "Item{" +
+               "name='" + name + '\'' +
+               '}';
+    }
 
-    public boolean isComponent() { return isComponent; }
-    public void setComponent(boolean component) { isComponent = component; }
+    // TODO: Implementar equals() e hashCode() se for usar Itens em Sets ou como chaves de Map
 }

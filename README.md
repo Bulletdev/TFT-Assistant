@@ -28,7 +28,7 @@
 
 <div>
 <p align="center"> 
-  <img a src="/public/tftlogo.png" width="150" height="150">
+  <img a src="/public/tftlogo.png" width="90" height="90">
 </p>
 
 ## <img alt="screenshot" src="public/TFT_Gold.png" width="20" height="20"> Descrição

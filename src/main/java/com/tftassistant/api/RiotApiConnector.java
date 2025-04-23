@@ -1,3 +1,5 @@
+package com.tftassistant.api;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
@@ -12,7 +14,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-class RiotApiConnector {
+import com.tftassistant.api.SummonerInfo;
+import com.tftassistant.api.MatchInfo;
+
+public class RiotApiConnector {
     private static final String API_BASE_URL = "https://na1.api.riotgames.com/tft/";
     private String apiKey;
     private OkHttpClient client;
@@ -22,6 +27,7 @@ class RiotApiConnector {
         this.apiKey = apiKey;
         this.client = new OkHttpClient();
         this.mapper = new ObjectMapper();
+        System.out.println("RiotApiConnector inicializado com a chave: " + apiKey.substring(0, 5) + "..."); // Apenas para log inicial
     }
 
     public SummonerInfo getSummonerInfo(String summonerName) throws IOException {
@@ -41,7 +47,7 @@ class RiotApiConnector {
         }
     }
 
-    public <MatchInfo> List<MatchInfo> getRecentMatches(String summonerId) throws IOException {
+    public List<MatchInfo> getRecentMatches(String summonerId) throws IOException {
         String url = API_BASE_URL + "match/v1/matches/by-puuid/" + summonerId + "/ids";
 
         Request request = new Request.Builder()
@@ -59,21 +65,18 @@ class RiotApiConnector {
                     new TypeReference<List<String>>() {}
             );
 
-            List<Object> list = new ArrayList<>();
+            List<MatchInfo> matches = new ArrayList<>();
             long limit = 10;
             for (String matchId : matchIds) {
                 if (limit-- == 0) break;
-                Optional<Object> matchDetails = getMatchDetails(matchId);
-                if (matchDetails.isPresent()) {
-                    Object o = matchDetails.get();
-                    list.add(o);
-                }
+                Optional<MatchInfo> matchDetails = getMatchDetails(matchId);
+                matchDetails.ifPresent(matches::add);
             }
-            return (List<MatchInfo>) list;
+            return matches;
         }
     }
 
-    private <MatchInfo> Optional<MatchInfo> getMatchDetails(String matchId) {
+    private Optional<MatchInfo> getMatchDetails(String matchId) {
         String url = API_BASE_URL + "match/v1/matches/" + matchId;
 
         Request request = new Request.Builder()

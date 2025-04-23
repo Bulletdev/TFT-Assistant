@@ -1,0 +1,234 @@
+/* --- Variáveis de Cor (Tema Dark Mobalytics-Inspired) --- */
+:root {
+    --bg-darkest: #1e2124;
+    --bg-dark: #282b30;
+    --bg-medium: #36393f;
+    --bg-light: #42464d;
+    --text-normal: #dcddde;
+    --text-muted: #a0a0a0;
+    --text-title: #ffffff;
+    --accent-color: #7289da; /* Roxo/Azul Discord */
+    --border-color: #42464d;
+    --selected-color: #40444b; /* Fundo para item selecionado */
+}
+
+/* --- Estilos Globais --- */
+.root-pane {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-base: var(--bg-medium); /* Base para controles JavaFX */
+    -fx-background-color: var(--bg-darkest);
+}
+
+.label {
+    -fx-text-fill: var(--text-normal);
+}
+
+/* --- Header --- */
+.header {
+    -fx-background-color: var(--bg-dark);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 0 0 1 0; /* Borda inferior */
+}
+
+.header-title {
+    -fx-font-size: 1.6em;
+    -fx-font-weight: bold;
+    -fx-text-fill: var(--text-title);
+}
+
+/* Header - Controles */
+.header .label {
+    -fx-text-fill: var(--text-muted); /* Labels no header mais suaves */
+}
+.header .text-field {
+    -fx-background-color: var(--bg-light);
+    -fx-text-fill: var(--text-normal);
+    -fx-border-color: var(--border-color);
+    -fx-prompt-text-fill: var(--text-muted);
+}
+.header .button {
+    -fx-background-color: var(--bg-light);
+    -fx-text-fill: var(--text-normal);
+    -fx-border-color: transparent;
+}
+.header .button:hover {
+    -fx-background-color: var(--accent-color);
+    -fx-text-fill: white;
+}
+
+/* --- Menu Lateral --- */
+.side-menu {
+    -fx-background-color: var(--bg-dark);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 0 1 0 0; /* Borda direita */
+}
+
+.side-menu .label {
+     -fx-text-fill: var(--text-muted);
+     -fx-padding: 0 0 5 10; /* Padding para título do menu */
+}
+
+.side-menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: var(--text-normal);
+    -fx-border-color: transparent;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-padding: 8 15 8 15;
+    -fx-alignment: center-left;
+}
+
+.side-menu-button:hover {
+    -fx-background-color: var(--bg-light);
+}
+
+.side-menu-button:pressed, .side-menu-button:focused {
+    -fx-background-color: var(--accent-color);
+    -fx-text-fill: white;
+}
+
+/* --- Área de Conteúdo Central --- */
+.center-content-area {
+    -fx-background-color: var(--bg-medium); /* Fundo padrão da área central */
+}
+
+/* SplitPane da View Recomendador */
+.recommender-split-pane > .split-pane-divider {
+    -fx-background-color: var(--border-color);
+    -fx-padding: 0 1 0 1;
+}
+
+/* Painel de Seleção de Campeões */
+.champion-selection-pane {
+    -fx-background-color: var(--bg-medium);
+    /* Padding já definido no Java */
+}
+
+/* Painel de Resultados */
+.results-scroll-pane {
+    -fx-background-color: var(--bg-dark);
+    -fx-border-color: transparent;
+}
+.results-scroll-pane > .viewport {
+    -fx-background-color: var(--bg-dark);
+}
+.results-container {
+    -fx-background-color: var(--bg-dark);
+}
+
+/* Estilos específicos para área de resultados (sinergias, campeões, itens) */
+.results-container .label {
+    -fx-text-fill: var(--text-normal); /* Garante texto claro */
+}
+.synergy-box {
+    -fx-background-color: var(--bg-light);
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 3 5 3 5;
+}
+.champion-display-box {
+    -fx-border-color: var(--border-color);
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+.positioning-area {
+     /* Estilos herdados devem ser suficientes */
+}
+
+/* --- ScrollBars --- */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color:transparent;
+    -fx-background-radius: 2em;
+    -fx-padding: 5;
+}
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 5;
+}
+.scroll-bar .track {
+    -fx-background-color: var(--bg-light);
+    -fx-border-color: transparent;
+    -fx-background-radius: 2em;
+    -fx-border-radius: 2em;
+}
+.scroll-bar .thumb {
+    -fx-background-color: var(--bg-medium);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+/* --- Controles Gerais (Revisão) --- */
+/* .button definido no header e menu, pode precisar de um estilo base se houver outros */
+/* .text-field definido no header */
+
+/* Estilos para os cartões de composição */
+.comp-card {
+    -fx-background-color: #45494e; /* Cor de fundo do cartão */
+    -fx-border-color: #6b6b6b;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.2, 0, 3);
+}
+
+/* Estilo para o nome da composição */
+.comp-name {
+    -fx-font-size: 1.4em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e8e8e8; /* Cor do texto clara */
+}
+
+/* Estilos para os Tiers */
+.comp-tier-s {
+    -fx-text-fill: #ff7f7f; /* Cor para Tier S (exemplo) */
+    -fx-font-weight: bold;
+    -fx-font-size: 1.2em;
+}
+.comp-tier-a {
+    -fx-text-fill: #ffbf7f; /* Cor para Tier A (exemplo) */
+     -fx-font-weight: bold;
+    -fx-font-size: 1.2em;
+}
+/* Adicionar estilos para outros tiers (B, C, etc.) se necessário */
+
+/* Estilo para o Playstyle */
+.comp-playstyle {
+    -fx-font-size: 0.9em;
+    -fx-text-fill: #cccccc;
+}
+
+/* Estilo para o nome do campeão dentro do cartão */
+.champ-label {
+    -fx-font-size: 0.9em;
+    -fx-text-fill: #dcdcdc;
+}
+
+/* ScrollPane e Viewport */
+.scroll-pane > .viewport {
+   /* -fx-background-color: transparent; */ /* Vamos deixar o container definir */
+   -fx-background-color: derive(-fx-base, -5%); /* Cor de fundo ligeiramente diferente da base */
+}
+
+.scroll-pane {
+   /* -fx-background-color: transparent; */
+   -fx-background-color: derive(-fx-base, -5%);
+   -fx-border-color: derive(-fx-base, -10%);
+   -fx-border-width: 1px;
+}
+
+/* Estilo para o divisor do SplitPane */
+.split-pane > .split-pane-divider {
+    -fx-background-color: derive(-fx-base, -15%);
+    -fx-padding: 0 1 0 1; /* Ajustar espessura */
+}
+
+/* Estilos específicos (se necessário) */
+.positioning-area .label {
+    /* Estilo padrão já deve funcionar bem, mas pode ser ajustado */
+    /* Ex: -fx-font-size: 1.1em; */
+} 

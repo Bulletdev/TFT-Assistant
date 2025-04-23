@@ -5,10 +5,24 @@ import com.tftassistant.model.ChampionPosition;
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.Point;
+import java.util.Map;
+import java.util.HashMap;
+
+// Importar dependência
+import com.tftassistant.core.CompositionAnalyzer;
 
 public class PositioningAssistant {
     private static final int BOARD_ROWS = 4;
     private static final int BOARD_COLS = 7;
+
+    // Adicionar dependência
+    private final CompositionAnalyzer compositionAnalyzer;
+
+    // Modificar construtor para receber a dependência
+    public PositioningAssistant(CompositionAnalyzer compositionAnalyzer) {
+        this.compositionAnalyzer = compositionAnalyzer;
+        System.out.println("PositioningAssistant inicializado.");
+    }
 
     public List<ChampionPosition> recommendPositioning(List<Champion> playerChampions, List<Champion> enemyChampions) {
         List<ChampionPosition> recommendations = new ArrayList<>();
@@ -37,14 +51,32 @@ public class PositioningAssistant {
         return groups;
     }
 
+    // Refatorar para usar traits do CompositionAnalyzer
     private String determineRole(Champion champion) {
-        // Lógica para determinar o papel do campeão baseado em suas características
-        // Retorna "TANK", "CARRY" ou "SUPPORT"
-        return switch (champion.getPrimaryRole()) {
-            case "ASSASSIN", "MARKSMAN" -> "CARRY";
-            case "TANK", "FIGHTER" -> "TANK";
-            default -> "SUPPORT";
-        };
+        if (champion == null || champion.getName() == null || compositionAnalyzer == null) {
+            return "SUPPORT"; // Default seguro
+        }
+
+        String championName = champion.getName();
+        Map<String, List<String>> traitMap = compositionAnalyzer.getChampionTraitsMap();
+        List<String> traits = List.of(); // Default para lista vazia
+        if (traitMap != null) {
+            traits = traitMap.getOrDefault(championName, List.of());
+        }
+
+        // Verificar usando os Sets públicos do CompositionAnalyzer
+        boolean isTank = traits.stream().anyMatch(CompositionAnalyzer.TANK_TRAITS::contains);
+        if (isTank) {
+            return "TANK";
+        }
+
+        boolean isCarry = traits.stream().anyMatch(CompositionAnalyzer.CARRY_TRAITS::contains);
+        if (isCarry) {
+            return "CARRY";
+        }
+
+        // Se não for Tank nem Carry, assume Support
+        return "SUPPORT";
     }
 
     private void positionTanks(List<ChampionPosition> positions, List<Champion> tanks) {
@@ -83,4 +115,15 @@ public class PositioningAssistant {
             col += 2;
         }
     }
+
+    public void suggestPositioning(/* Parâmetros: unidades atuais, talvez inimigos */) {
+        // TODO: Implementar lógica de sugestão de posicionamento
+        // - Analisar unidades e suas habilidades/alcance
+        // - Considerar sinergias e itens
+        // - Avaliar ameaças inimigas (se disponível)
+        // - Sugerir posições ótimas no tabuleiro
+        System.out.println("Sugerindo posicionamento..."); // Log inicial
+    }
+
+    // TODO: Adicionar métodos auxiliares para cálculos de posicionamento
 }
