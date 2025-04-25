@@ -8,7 +8,7 @@
     <img alt="Made by" src="https://img.shields.io/static/v1?label=made%20by&message=Michael%20Bullet&color=04D361&labelColor=000000">
   </a> 
   
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/bulletdev/TFT-Assistant?color=04D361&labelColor=000000">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/bulletdev/TFT-Assistant?color=04D361&labelColor=000000"> 
   
   <a href="https://github.com/Bulletdev/TFT-Assistant/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/bulletdev/TFT-Assistant?color=04D361&labelColor=000000">
